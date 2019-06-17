@@ -5,6 +5,9 @@ defmodule ChallengeWeb.Router do
     plug :accepts, ["json"]
   end
 
+  post "/login", ChallengeWeb.SessionsController, :create
+  delete "/logout", ChallengeWeb.SessionsController, :delete
+
   scope "/api", ChallengeWeb do
     pipe_through :api
   end
