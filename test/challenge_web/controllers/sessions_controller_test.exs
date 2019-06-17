@@ -14,19 +14,13 @@ defmodule ChallengeWeb.SessionsControllerTest do
     password: "some current user password"
   }
 
-  def create_user(attrs \\ %{}) do
-    %User{}
-    |> User.changeset(attrs)
-    |> Repo.insert()
-  end
-
   def fixture(:user) do
-    {:ok, user} = create_user(@create_attrs)
+    {:ok, user} = User.create_user(@create_attrs)
     user
   end
 
   def fixture(:current_user) do
-    {:ok, current_user} = create_user(@current_user_attrs)
+    {:ok, current_user} = User.create_user(@current_user_attrs)
     current_user
   end
 

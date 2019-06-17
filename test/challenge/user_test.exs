@@ -8,17 +8,11 @@ defmodule Challenge.UserTest do
 
     @valid_attrs %{username: "some username", is_active: true, password: "some password"}
 
-    def create_user(attrs \\ %{}) do
-      %User{}
-      |> User.changeset(attrs)
-      |> Repo.insert()
-    end
-
     def user_fixture(attrs \\ %{}) do
       {:ok, user} =
         attrs
         |> Enum.into(@valid_attrs)
-        |> create_user()
+        |> User.create_user()
 
       user
     end

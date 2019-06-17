@@ -12,6 +12,7 @@ defmodule ChallengeWeb.Router do
     pipe_through :api
   end
 
+  post "/users", ChallengeWeb.UserController, :create
   post "/check", ChallengeWeb.HealthController, :check
 
 end
