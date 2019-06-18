@@ -19,6 +19,7 @@ defmodule ChallengeWeb.Router do
   scope "/messages", ChallengeWeb do
     pipe_through :authenticate
     post "/check", HealthController, :check
+    post "/", MessageController, :create
   end
 
   post "/users", ChallengeWeb.UserController, :create
