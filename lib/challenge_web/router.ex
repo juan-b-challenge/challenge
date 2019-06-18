@@ -20,6 +20,7 @@ defmodule ChallengeWeb.Router do
     pipe_through :authenticate
     post "/check", HealthController, :check
     post "/", MessageController, :create
+    get "/", MessageController, :get
   end
 
   post "/users", ChallengeWeb.UserController, :create
